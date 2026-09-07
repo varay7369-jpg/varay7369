@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* این قابلیت صفحه را دقیقاً مثل هایب اسلایدی و چسبنده به هر بخش می‌کند */
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    background-color: #0b0b0b;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 24px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(11, 11, 11, 0.7);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}
+
+.nav-links a {
+    color: #a0a0a0;
+    text-decoration: none;
+    margin-left: 35px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+/* Screen Sections */
+.screen-section {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 10%;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.content {
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Hero Section */
+.hero .tag {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: #ff3366;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #8e8e93;
+    max-width: 600px;
+}
+
+/* Cards & Lineups */
+.grid-cards, .artist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #141414;
+    padding: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.card h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.card p {
+    color: #8e8e93;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.artist-box {
+    height: 320px;
+    background: #181818;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    color: #555;
+    transition: all 0.4s ease;
+}
+
+.artist-card:hover .artist-box {
+    background: #222;
+    color: #fff;
+    border-color: #ff3366;
+}
+
+.artist-card h4 {
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+/* Contact & Footer */
+.contact {
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    font-size: 0.75rem;
+    color: #555;
+    letter-spacing: 1px;
+}
