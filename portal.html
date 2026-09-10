@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTAL | VARAY HOLDING</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="brand"><span class="logo-text">VARAY</span></a>
+        </div>
+        <div class="nav-right">
+            <button id="theme-toggle" class="theme-btn"><span class="theme-indicator"></span></button>
+            <button id="menu-open" class="menu-btn"><span class="menu-line"></span><span class="menu-line"></span></button>
+        </div>
+    </header>
+
+    <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-header">
+            <span class="menu-title">INDEX</span>
+            <button id="menu-close" class="close-btn">&times;</button>
+        </div>
+        <div class="menu-body-scroll">
+            <ul class="nav-list">
+                <li><a href="portal.html" class="active">PORTAL</a></li>
+                <li><a href="info.html">INFO</a></li>
+                <li><a href="smiles-and-rules.html">SMILES AND RULES</a></li>
+                <li><a href="news.html">ANNOUNCEMENTS * NEWS</a></li>
+                <li><a href="apply.html">APPLY</a></li>
+            </ul>
+        </div>
+        <div class="menu-footer"><p>VARAY HOLDING CORP. &copy; 2026</p></div>
+    </div>
+
+    <main class="page-container content-page">
+        <div class="audition-wrapper">
+            <header class="page-header">
+                <p class="section-tag">VARAY ECOSYSTEM</p>
+                <h1 class="page-title">PORTAL</h1>
+                <p class="page-desc">Single sign-on for candidates, signed trainees, and authorized casting executives.</p>
+            </header>
+
+            <!-- Role Selector Tabs -->
+            <div class="stepper">
+                <button type="button" class="step-indicator active role-tab" onclick="switchRole('applicant')">APPLICANT & TRAINEE</button>
+                <button type="button" class="step-indicator role-tab" onclick="switchRole('staff')">STAFF & EXECUTIVE</button>
+            </div>
+
+            <div class="form-container">
+                <!-- Applicant Portal View -->
+                <div id="portal-applicant" class="portal-box">
+                    <h3 class="step-title">Applicant Status Tracking</h3>
+                    <div class="input-group">
+                        <label>Application Reference Code</label>
+                        <input type="text" id="appRef" placeholder="e.g. VRY-2026-9812">
+                    </div>
+                    <div class="input-group">
+                        <label>Registered Email</label>
+                        <input type="email" id="appEmail" placeholder="yourname@domain.com">
+                    </div>
+                    <button type="button" class="btn-action" onclick="simulateLogin('applicant')">ACCESS DOSSIER</button>
+
+                    <!-- Applicant Result Mockup -->
+                    <div id="applicant-dashboard" class="dashboard-mock hidden">
+                        <div class="dash-card">
+                            <span class="dash-tag">APPLICATION ID: VRY-2026-9812</span>
+                            <h3>Current Phase: Round 2 (Vocal Evaluation)</h3>
+                            <p class="dash-status">Status: <strong>Under Comprehensive Review</strong></p>
+                            <p class="dash-text">Our A&R Casting Director is evaluating your vocal demo. Next announcement will be sent to your email.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Staff Portal View -->
+                <div id="portal-staff" class="portal-box hidden">
+                    <h3 class="step-title">Staff & Casting Board Authentication</h3>
+                    <div class="input-group">
+                        <label>Executive ID</label>
+                        <input type="text" placeholder="admin.casting@varay.com">
+                    </div>
+                    <div class="input-group">
+                        <label>Security Token / Password</label>
+                        <input type="password" placeholder="••••••••••••">
+                    </div>
+                    <button type="button" class="btn-action" onclick="simulateLogin('staff')">LOGIN TO EVALUATION CONSOLE</button>
+
+                    <!-- Staff Dashboard Mockup -->
+                    <div id="staff-dashboard" class="dashboard-mock hidden">
+                        <div class="dash-card">
+                            <span class="dash-tag">INTERNAL AUDITION QUEUE (DEMO)</span>
+                            <div class="applicant-row">
+                                <div>
+                                    <h4>Candidate #8492 - Kim J.</h4>
+                                    <p>Vocal & Rap | Submitted 2h ago</p>
+                                </div>
+                                <div class="score-actions">
+                                    <button class="btn-tag">Listen Demo</button>
+                                    <button class="btn-tag accept">Shortlist</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
