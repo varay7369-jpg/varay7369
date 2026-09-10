@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APPLY | VARAY HOLDING</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="brand">
+                <span class="logo-text">VARAY</span>
+            </a>
+        </div>
+        <div class="nav-right">
+            <button id="theme-toggle" class="theme-btn"><span class="theme-indicator"></span></button>
+            <button id="menu-open" class="menu-btn"><span class="menu-line"></span><span class="menu-line"></span></button>
+        </div>
+    </header>
+
+    <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-header">
+            <span class="menu-title">INDEX</span>
+            <button id="menu-close" class="close-btn">&times;</button>
+        </div>
+        <div class="menu-body-scroll">
+            <ul class="nav-list">
+                <li><a href="portal.html">PORTAL</a></li>
+                <li><a href="info.html">INFO</a></li>
+                <li><a href="smiles-and-rules.html">SMILES AND RULES</a></li>
+                <li><a href="news.html">ANNOUNCEMENTS * NEWS</a></li>
+                <li><a href="apply.html" class="active">APPLY</a></li>
+            </ul>
+        </div>
+        <div class="menu-footer"><p>VARAY HOLDING CORP. &copy; 2026</p></div>
+    </div>
+
+    <main class="page-container content-page">
+        <div class="audition-wrapper">
+            <header class="page-header">
+                <p class="section-tag">OFFICIAL AUDITION SYSTEM</p>
+                <h1 class="page-title">APPLY</h1>
+                <p class="page-desc">Complete your multi-phase application. Evaluated confidentially by VARAY Casting Board.</p>
+            </header>
+
+            <div class="stepper">
+                <div class="step-indicator active" data-step="1">1. PROFILE</div>
+                <div class="step-indicator" data-step="2">2. SPECIALTY</div>
+                <div class="step-indicator" data-step="3">3. MEDIA</div>
+                <div class="step-indicator" data-step="4">4. SUMMARY</div>
+            </div>
+
+            <form id="audition-form" class="form-container">
+                <!-- STEP 1 -->
+                <section class="form-step active" id="step-1">
+                    <h2 class="step-title">General Candidate Profile</h2>
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Full Legal Name *</label>
+                            <input type="text" id="fullName" placeholder="e.g. Min-Jun Park" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Date of Birth *</label>
+                            <input type="date" id="birthDate" required>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Nationality & Current Residency *</label>
+                            <input type="text" id="nationality" placeholder="e.g. South Korea / Japan / USA" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Contact Email *</label>
+                            <input type="email" id="email" placeholder="talent@domain.com" required>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Height (cm) & Weight (kg) [Optional]</label>
+                            <input type="text" id="bodyMetric" placeholder="176cm / 60kg">
+                        </div>
+                        <div class="input-group">
+                            <label>Contact Phone / Messenger ID *</label>
+                            <input type="text" id="phone" placeholder="+1 ... or ID" required>
+                        </div>
+                    </div>
+                    <div class="step-nav right-align">
+                        <button type="button" class="btn-action" onclick="nextStep(2)">NEXT STEP &rarr;</button>
+                    </div>
+                </section>
+
+                <!-- STEP 2 -->
+                <section class="form-step" id="step-2">
+                    <h2 class="step-title">Specialty & Background Assessment</h2>
+                    <div class="input-group">
+                        <label>Application Disciplines (Multiple choice)</label>
+                        <div class="checkbox-grid">
+                            <label class="custom-check"><input type="checkbox" name="cat" value="vocal"><span>Vocal</span></label>
+                            <label class="custom-check"><input type="checkbox" name="cat" value="rap"><span>Rap</span></label>
+                            <label class="custom-check"><input type="checkbox" name="cat" value="dance"><span>Dance</span></label>
+                            <label class="custom-check"><input type="checkbox" name="cat" value="acting"><span>Acting</span></label>
+                            <label class="custom-check"><input type="checkbox" name="cat" value="producing"><span>Production</span></label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Have you ever been signed with another agency or entertainment entity?</label>
+                        <div class="radio-group">
+                            <label class="custom-radio"><input type="radio" name="trainee_prev" value="yes"><span>Yes (Previously signed)</span></label>
+                            <label class="custom-radio"><input type="radio" name="trainee_prev" value="no" checked><span>No (Independent)</span></label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Languages Spoken</label>
+                        <input type="text" placeholder="Korean (Native), English (Fluent), Japanese (Conversational)...">
+                    </div>
+
+                    <div class="step-nav">
+                        <button type="button" class="btn-secondary" onclick="prevStep(1)">&larr; BACK</button>
+                        <button type="button" class="btn-action" onclick="nextStep(3)">NEXT STEP &rarr;</button>
+                    </div>
+                </section>
+
+                <!-- STEP 3 -->
+                <section class="form-step" id="step-3">
+                    <h2 class="step-title">Media & Demonstration Uploads</h2>
+                    <div class="input-group">
+                        <label>Audio Vocal / Rap Demo (MP3, WAV)</label>
+                        <div class="file-drop-zone">
+                            <input type="file" accept="audio/*">
+                            <p class="drop-text">Upload demo file</p>
+                            <span class="file-hint">Max file size: 50MB</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Photographs (Close-up & Full Body)</label>
+                        <div class="file-drop-zone">
+                            <input type="file" accept="image/*" multiple>
+                            <p class="drop-text">Upload raw, unfiltered photos</p>
+                            <span class="file-hint">JPG, PNG</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Performance Video Link</label>
+                        <input type="url" placeholder="https://youtube.com/watch?v=... or Google Drive">
+                        <span class="file-hint">Please make sure the link privacy is set to public or unlisted.</span>
+                    </div>
+
+                    <div class="step-nav">
+                        <button type="button" class="btn-secondary" onclick="prevStep(2)">&larr; BACK</button>
+                        <button type="button" class="btn-action" onclick="nextStep(4)">NEXT STEP &rarr;</button>
+                    </div>
+                </section>
+
+                <!-- STEP 4 -->
+                <section class="form-step" id="step-4">
+                    <h2 class="step-title">Artist Statement & Submission</h2>
+                    <div class="input-group">
+                        <label>Self-Introduction & Artistic Aspirations</label>
+                        <textarea rows="5" placeholder="Tell us about your musical identity and why you believe VARAY is your next home."></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="custom-check agreement-check">
+                            <input type="checkbox" required>
+                            <span>I confirm that all information provided is accurate and agree to VARAY Holding screening guidelines.</span>
+                        </label>
+                    </div>
+
+                    <div class="step-nav">
+                        <button type="button" class="btn-secondary" onclick="prevStep(3)">&larr; BACK</button>
+                        <button type="submit" class="btn-action">CONFIRM & SUBMIT</button>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
