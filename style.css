@@ -28,7 +28,7 @@
 }
 
 html {
-    overflow-y: scroll; /* حفظ اسکرول ارگانیک زنده */
+    overflow-y: scroll;
 }
 
 body {
@@ -40,7 +40,7 @@ body {
     flex-direction: column;
 }
 
-/* --- Header / Navbar --- */
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -59,8 +59,6 @@ body {
 .brand {
     text-decoration: none;
     color: var(--text-color);
-    display: flex;
-    align-items: center;
 }
 
 .logo-text {
@@ -110,7 +108,7 @@ body {
     background-color: var(--text-color);
 }
 
-/* --- Clean Fullscreen Menu Overlay --- */
+/* Fullscreen Menu */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -125,7 +123,7 @@ body {
     padding: 25px 40px;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.3s ease;
 }
 
 .menu-overlay.open {
@@ -165,13 +163,13 @@ body {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
 }
 
 .nav-list li a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+    font-size: clamp(1.8rem, 4vw, 3rem);
     font-weight: 600;
     letter-spacing: 1px;
     display: inline-block;
@@ -180,16 +178,7 @@ body {
 
 .nav-list li a:hover, .nav-list li a.active {
     opacity: 0.4;
-    transform: translateX(8px);
-}
-
-.nav-list li.portal-link a {
-    font-size: 0.95rem;
-    letter-spacing: 2px;
-    margin-top: 20px;
-    padding: 8px 18px;
-    border: 1px solid var(--text-color);
-    display: inline-block;
+    transform: translateX(10px);
 }
 
 .menu-footer {
@@ -200,7 +189,7 @@ body {
     letter-spacing: 1.5px;
 }
 
-/* --- Centered Hero Page Layout --- */
+/* Page Containers */
 .page-container {
     width: 100%;
     flex: 1;
@@ -252,7 +241,6 @@ body {
     color: var(--text-color);
     line-height: 1.5;
     margin-bottom: 35px;
-    font-weight: 400;
 }
 
 .cta-actions {
@@ -263,40 +251,27 @@ body {
     width: 100%;
 }
 
-.btn-action {
-    background-color: var(--contrast-btn-bg);
-    color: var(--contrast-btn-text);
+.btn-action, .btn-secondary {
     padding: 14px 34px;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 2px;
-    border: none;
     cursor: pointer;
     text-align: center;
-    transition: opacity 0.2s;
+    display: inline-block;
 }
 
-.btn-action:hover {
-    opacity: 0.85;
+.btn-action {
+    background-color: var(--contrast-btn-bg);
+    color: var(--contrast-btn-text);
+    border: none;
 }
 
 .btn-secondary {
     background-color: transparent;
     color: var(--text-color);
     border: 1px solid var(--border-color);
-    padding: 14px 34px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    cursor: pointer;
-    text-align: center;
-    transition: border-color 0.2s;
-}
-
-.btn-secondary:hover {
-    border-color: var(--text-color);
 }
 
 .hero-bottom-info {
@@ -307,7 +282,7 @@ body {
     color: var(--muted-color);
 }
 
-/* --- Audition Multi-Step Page Styling --- */
+/* Content Pages Layout */
 .content-page {
     padding-top: 110px;
     padding-bottom: 80px;
@@ -344,7 +319,7 @@ body {
     line-height: 1.6;
 }
 
-/* Step Bar */
+/* Stepper & Tabs */
 .stepper {
     display: flex;
     border-bottom: 1px solid var(--border-color);
@@ -361,6 +336,11 @@ body {
     color: var(--muted-color);
     white-space: nowrap;
     border-bottom: 2px solid transparent;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
 }
 
 .step-indicator.active {
@@ -368,14 +348,14 @@ body {
     border-bottom: 2px solid var(--text-color);
 }
 
-/* Forms */
+/* Form Styles */
 .form-step {
     display: none;
-    animation: fadeIn 0.3s ease;
 }
 
 .form-step.active {
     display: block;
+    animation: fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn {
@@ -384,8 +364,8 @@ body {
 }
 
 .step-title {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
+    font-size: 1.25rem;
+    margin-bottom: 25px;
     letter-spacing: 0.5px;
 }
 
@@ -403,40 +383,29 @@ body {
 }
 
 .input-group label {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 1.5px;
     color: var(--muted-color);
     text-transform: uppercase;
 }
 
-.input-group input[type="text"],
-.input-group input[type="email"],
-.input-group input[type="date"],
-.input-group input[type="number"],
-.input-group input[type="url"],
-.input-group select,
-.input-group textarea {
+.input-group input, .input-group select, .input-group textarea {
     background-color: var(--input-bg);
     border: 1px solid var(--border-color);
     color: var(--text-color);
     padding: 14px 16px;
     font-size: 0.95rem;
     outline: none;
-    transition: border-color 0.2s;
 }
 
-.input-group input:focus,
-.input-group select:focus,
-.input-group textarea:focus {
+.input-group input:focus, .input-group select:focus, .input-group textarea:focus {
     border-color: var(--text-color);
 }
 
-/* Custom Checkbox & Radio */
 .checkbox-grid, .radio-group {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 12px;
-    margin-top: 5px;
 }
 
 .custom-check, .custom-radio {
@@ -448,21 +417,14 @@ body {
     padding: 12px 14px;
     cursor: pointer;
     font-size: 0.85rem;
-    color: var(--text-color);
 }
 
-.custom-check input, .custom-radio input {
-    accent-color: var(--text-color);
-}
-
-/* File Drop Zone */
 .file-drop-zone {
     border: 1px dashed var(--border-color);
     padding: 30px;
     text-align: center;
     background-color: var(--input-bg);
     position: relative;
-    cursor: pointer;
 }
 
 .file-drop-zone input[type="file"] {
@@ -478,7 +440,6 @@ body {
 .drop-text {
     font-size: 0.9rem;
     margin-bottom: 6px;
-    color: var(--text-color);
 }
 
 .file-hint {
@@ -499,7 +460,121 @@ body {
     justify-content: flex-end;
 }
 
-/* --- Mobile Responsiveness --- */
+/* Info, News & Rules Styling */
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-card, .rule-block, .news-item {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+}
+
+.card-title, .rule-block h2 {
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.card-desc, .rule-block p, .news-summary {
+    color: var(--muted-color);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.clean-bullet-list {
+    list-style: none;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--muted-color);
+    font-size: 0.95rem;
+}
+
+.clean-bullet-list strong {
+    color: var(--text-color);
+}
+
+.rules-section, .news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.news-date {
+    font-size: 0.75rem;
+    color: var(--muted-color);
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.news-heading {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+/* Portal Dashboards */
+.hidden {
+    display: none !important;
+}
+
+.dash-card {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    margin-top: 25px;
+}
+
+.dash-tag {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--muted-color);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.dash-status {
+    margin: 10px 0;
+    font-size: 0.95rem;
+}
+
+.dash-text {
+    color: var(--muted-color);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.applicant-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.score-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-tag {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 8px 14px;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+.btn-tag.accept {
+    background: var(--contrast-btn-bg);
+    color: var(--contrast-btn-text);
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .navbar {
         padding: 0 20px;
@@ -511,19 +586,19 @@ body {
     .hero-screen {
         min-height: calc(100vh - 65px);
     }
-    .menu-overlay {
-        padding: 20px;
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
     }
     .cta-actions {
         flex-direction: column;
-        width: 100%;
-        max-width: 300px;
     }
     .btn-action, .btn-secondary {
         width: 100%;
     }
-    .form-grid {
-        grid-template-columns: 1fr;
-        gap: 0;
+    .applicant-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
     }
 }
