@@ -1,3 +1,549 @@
+/* --- Google Fonts (Original High-End Aesthetic) --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #050505;
+  --surface: #0f0f0f;
+  --surface-hover: #181818;
+  --border: #222222;
+  --border-light: #333333;
+  --text: #f0f0f0;
+  --muted: #777777;
+  --pill-btn-bg: #f0f0f0;
+  --pill-btn-text: #050505;
+}
+
+[data-theme="light"] {
+  --bg: #f7f7f7;
+  --surface: #ffffff;
+  --surface-hover: #eaeaea;
+  --border: #e2e2e2;
+  --border-light: #cccccc;
+  --text: #0a0a0a;
+  --muted: #777777;
+  --pill-btn-bg: #0a0a0a;
+  --pill-btn-text: #f7f7f7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none;
+  user-select: none;
+}
+
+html, body {
+  width: 100%;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden !important;
+  height: 100vh;
+}
+
+/* Typography Overrides */
+h1, h2, h3, .brand, .main-title, .hero-concept {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 2px;
+}
+
+/* Fixed Header Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.theme-toggle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--text);
+}
+
+.theme-toggle-btn .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--text);
+  transition: transform 0.2s;
+}
+
+/* 3-Bar Minimalist Hamburger Button */
+.hamburger-btn {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.5px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.hamburger-btn:hover {
+  border-color: var(--text);
+}
+
+.hamburger-btn .bar {
+  width: 18px;
+  height: 1.5px;
+  background-color: var(--text);
+  border-radius: 2px;
+  transition: 0.2s ease;
+}
+
+/* Menu Overlay Screen */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  background: var(--bg);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 32px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-title {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.close-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.close-btn:hover {
+  border-color: var(--text);
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: auto 0;
+}
+
+.menu-links a {
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 1px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.menu-links a:hover {
+  opacity: 0.5;
+  transform: translateX(10px);
+}
+
+/* In-Menu Custom Language Dropdown */
+.menu-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-lang-wrapper {
+  position: relative;
+}
+
+.lang-trigger-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 18px;
+  color: var(--text);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: border-color 0.2s;
+}
+
+.lang-trigger-btn:hover {
+  border-color: var(--text);
+}
+
+.menu-lang-list {
+  display: none;
+  position: absolute;
+  bottom: 115%;
+  left: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 8px;
+  min-width: 140px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-lang-list.show {
+  display: flex;
+}
+
+.lang-option {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  padding: 8px 14px;
+  text-align: left;
+  font-size: 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.lang-option:hover, .lang-option.active {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.menu-serial {
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+/* Home Page Full Viewport (Zero Scroll) */
+.home-viewport {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 85px 24px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-badge {
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.main-title {
+  font-size: clamp(3rem, 11vw, 7.5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  margin-bottom: 20px;
+  letter-spacing: 6px;
+}
+
+.hero-concept {
+  font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+  letter-spacing: 4px;
+  margin-bottom: 18px;
+  color: var(--text);
+}
+
+.manifesto-text {
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.cta-group {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pill-btn {
+  border-radius: 999px;
+  padding: 14px 34px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pill-btn:active {
+  transform: scale(0.97);
+}
+
+.pill-btn.primary {
+  background-color: var(--pill-btn-bg);
+  color: var(--pill-btn-text);
+  border-color: var(--pill-btn-bg);
+}
+
+.pill-btn.secondary {
+  background-color: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.pill-btn.secondary:hover {
+  border-color: var(--text);
+}
+
+.home-footer-meta {
+  position: absolute;
+  bottom: 24px;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: var(--muted);
+}
+
+/* Interior Pages Content - Huge Header Clearance */
+.page-container {
+  padding-top: 170px !important;
+  padding-bottom: 90px;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.page-header {
+  margin-bottom: 45px;
+}
+
+.section-tag {
+  font-size: 0.8rem;
+  letter-spacing: 3.5px;
+  color: var(--muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.page-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.page-description {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* High-End Surface Cards */
+.card-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 36px;
+  margin-bottom: 26px;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.card-body {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* Custom In-Site Form Controls (Replacing Native Select) */
+.field-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+  position: relative;
+}
+
+.field-box label {
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.field-box input, .field-box textarea {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 15px 22px;
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+  user-select: text;
+}
+
+.field-box textarea {
+  border-radius: 22px;
+  resize: vertical;
+}
+
+.field-box input:focus, .field-box textarea:focus {
+  border-color: var(--text);
+}
+
+/* Custom In-Site Selector (No Native Phone Ugly Dropdown) */
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select-trigger {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 15px 22px;
+  color: var(--text);
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.custom-select-trigger:hover {
+  border-color: var(--text);
+}
+
+.custom-dropdown-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  max-height: 240px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow-y: auto;
+  z-index: 50;
+  padding: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.custom-dropdown-panel.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 12px 18px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.dropdown-item:hover, .dropdown-item.active {
+  background: var(--surface-hover);
+  color: var(--text);
+}
 /* --- Global Variables (Strictly Monochrome) --- */
 :root {
     --bg: #0a0a0a;
