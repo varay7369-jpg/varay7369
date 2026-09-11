@@ -1,158 +1,89 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMILES AND RULES | VARAY HOLDING</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VARAY — Rules & Regulations</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="nav-left">
-            <a href="index.html" class="brand">VARAY</a>
-            <div class="lang-selector">
-                <span class="lang-current">EN</span>
-                <div class="lang-dropdown">
-                    <button type="button" class="lang-opt active">EN</button>
-                    <button type="button" class="lang-opt">KO</button>
-                    <button type="button" class="lang-opt">JA</button>
-                    <button type="button" class="lang-opt">ZH</button>
-                    <button type="button" class="lang-opt">RU</button>
-                    <button type="button" class="lang-opt">FR</button>
-                    <button type="button" class="lang-opt">FA</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="nav-right">
-            <button id="theme-toggle" class="theme-btn"><span class="theme-indicator"></span></button>
-            <button id="menu-open" class="menu-btn">
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-            </button>
-        </div>
-    </header>
-
-    <div id="menu-overlay" class="menu-overlay">
-        <div class="menu-header">
-            <span class="menu-title">INDEX // 7369</span>
-            <button id="menu-close" class="close-btn">&times;</button>
-        </div>
-        <div class="menu-content">
-            <ul class="nav-list">
-                <li><a href="portal.html">PORTAL</a></li>
-                <li><a href="info.html">INFO</a></li>
-                <li><a href="smiles-and-rules.html" class="active">SMILES AND RULES</a></li>
-                <li><a href="news.html">ANNOUNCEMENTS * NEWS</a></li>
-                <li><a href="apply.html">APPLY</a></li>
-            </ul>
-        </div>
-        <div class="menu-footer">
-            <p>VARAY HOLDING ENTERTAINMENT &bull; 7369 INTL</p>
-        </div>
+  <!-- Header Navbar -->
+  <header class="navbar">
+    <a href="index.html" class="brand">VARAY</a>
+    <div class="nav-actions">
+      <button class="theme-toggle-btn" aria-label="Toggle Theme">
+        <div class="dot"></div>
+      </button>
+      <button class="hamburger-btn" id="menuBtn" aria-label="Open Menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
     </div>
+  </header>
 
-    <main class="page-container content-page">
-        <div class="content-wrapper">
-            <header class="page-header">
-                <span class="section-tag">VALUES & DISCIPLINE</span>
-                <h1 class="page-title">SMILES AND RULES</h1>
-                <p class="page-desc">The mutual covenants that secure artist health, creative authenticity, and lasting cultural resonance.</p>
-            </header>
-
-            <div class="cards-stack">
-                <div class="form-section-card">
-                    <h3 class="card-inner-title">01 / REFINED SINCERITY</h3>
-                    <p class="card-inner-body">The smile is our standard of inner balance. We cultivate creative spaces where artists thrive without psychological intimidation or predatory contractual practices.</p>
-                </div>
-
-                <div class="form-section-card">
-                    <h3 class="card-inner-title">02 / UNCOMPROMISED DISCIPLINE</h3>
-                    <p class="card-inner-body">Technical mastery and unwavering personal integrity are mandatory. Plagiarism, contractual bad faith, and ethical compromises carry immediate termination.</p>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMILES AND RULES | VARAY HOLDING</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <header class="navbar">
-        <div class="nav-left">
-            <a href="index.html" class="brand"><span class="logo-text">VARAY</span></a>
-        </div>
-        <div class="nav-right">
-            <button id="theme-toggle" class="theme-btn"><span class="theme-indicator"></span></button>
-            <button id="menu-open" class="menu-btn"><span class="menu-line"></span><span class="menu-line"></span></button>
-        </div>
-    </header>
-
-    <div id="menu-overlay" class="menu-overlay">
-        <div class="menu-header">
-            <span class="menu-title">INDEX</span>
-            <button id="menu-close" class="close-btn">&times;</button>
-        </div>
-        <div class="menu-body-scroll">
-            <ul class="nav-list">
-                <li><a href="portal.html">PORTAL</a></li>
-                <li><a href="info.html">INFO</a></li>
-                <li><a href="smiles-and-rules.html" class="active">SMILES AND RULES</a></li>
-                <li><a href="news.html">ANNOUNCEMENTS * NEWS</a></li>
-                <li><a href="apply.html">APPLY</a></li>
-            </ul>
-        </div>
-        <div class="menu-footer"><p>VARAY HOLDING CORP. &copy; 2026</p></div>
+  <!-- Fullscreen Navigation Menu -->
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-top-bar">
+      <div class="menu-title">NAVIGATION INDEX</div>
+      <button class="close-btn" id="closeMenuBtn" aria-label="Close Menu">✕</button>
     </div>
+    
+    <nav class="menu-links">
+      <a href="portal.html">PORTAL</a>
+      <a href="info.html">ENTERPRISE INFO</a>
+      <a href="smiles-and-rules.html">RULES & TERMS</a>
+      <a href="news.html">ANNOUNCEMENTS</a>
+      <a href="apply.html">APPLY AUDITION</a>
+    </nav>
 
-    <main class="page-container content-page">
-        <div class="audition-wrapper">
-            <header class="page-header">
-                <p class="section-tag">CORE PHILOSOPHY & CODE OF ETHICS</p>
-                <h1 class="page-title">SMILES AND RULES</h1>
-                <p class="page-desc">The mutual pact between VARAY, our signed creators, and our global audience.</p>
-            </header>
-
-            <div class="rules-section">
-                <div class="rule-block">
-                    <h2>01. THE PHILOSOPHY OF SMILES</h2>
-                    <p>Art exists to elevate the human spirit. Every project under the VARAY banner is crafted to bring genuine resonance and inspiring energy to the world.</p>
-                </div>
-
-                <div class="rule-block">
-                    <h2>02. INTEGRITY & ZERO TOLERANCE</h2>
-                    <p>VARAY operates with absolute transparency. We enforce a zero-tolerance policy against intellectual property plagiarism, unfair artist treatment, and deceptive practices.</p>
-                </div>
-
-                <div class="rule-block">
-                    <h2>03. ARTIST WELLBEING & GROWTH</h2>
-                    <p>Our training environment prioritizes mental health, continuous personal education, and sustainable creative schedules over short-term commercial pressure.</p>
-                </div>
-
-                <div class="rule-block">
-                    <h2>04. CONFIDENTIALITY & AUDITION PRIVACY</h2>
-                    <p>All audition recordings, personal metric data, and demo drafts submitted through our portal remain strictly confidential within the casting committee.</p>
-                </div>
-            </div>
+    <div class="menu-bottom">
+      <div class="menu-lang-wrapper">
+        <button class="lang-trigger-btn" id="langTrigger">
+          <span id="currentLangLabel">EN</span>
+          <span style="font-size:0.6rem;">▼</span>
+        </button>
+        <div class="menu-lang-list" id="langMenu">
+          <button class="lang-option active" data-lang="en" data-code="EN">English (EN)</button>
+          <button class="lang-option" data-lang="ko" data-code="KO">한국어 (KO)</button>
+          <button class="lang-option" data-lang="ja" data-code="JA">日本語 (JA)</button>
+          <button class="lang-option" data-lang="zh" data-code="ZH">中文 (ZH)</button>
+          <button class="lang-option" data-lang="ru" data-code="RU">Русский (RU)</button>
+          <button class="lang-option" data-lang="fa" data-code="FA">فارسی (FA)</button>
+          <button class="lang-option" data-lang="fr" data-code="FR">Français (FR)</button>
         </div>
-    </main>
+      </div>
+      <div class="menu-serial">#VRY-7369</div>
+    </div>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Content Container -->
+  <main class="page-container">
+    <div class="content-wrapper">
+      <div class="page-header">
+        <span class="section-tag">COMPLIANCE</span>
+        <h1 class="page-title">RULES & TERMS</h1>
+        <p class="page-description">Standardized operational guidelines, trainee terms, and enterprise protocols.</p>
+      </div>
+
+      <div class="card-panel">
+        <h2 class="card-title">1. AUDITION & SUBMISSION ETHICS</h2>
+        <p class="card-body">All submitted material, likeness rights, and audition portfolios must be 100% authentic and owned by the applicant. Falsified records result in permanent disqualification.</p>
+      </div>
+
+      <div class="card-panel">
+        <h2 class="card-title">2. NON-DISCLOSURE AGREEMENT</h2>
+        <p class="card-body">Applicants and accepted candidates must maintain strict confidentiality regarding audition results, internal processes, and unpublished concepts.</p>
+      </div>
+
+      <div class="card-panel">
+        <h2 class="card-title">3. PROFESSIONAL CONDUCT</h2>
+        <p class="card-body">VARAY fosters a zero-tolerance policy towards harassment, discrimination, or unsportsmanlike behavior across all online and offline spaces.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
