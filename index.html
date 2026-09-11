@@ -1,86 +1,78 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VARAY HOLDING | Official</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>VARAY — Entertainment & Enterprise</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="no-scroll">
 
-    <header class="navbar">
-        <div class="nav-left">
-            <a href="index.html" class="brand">VARAY</a>
-            <div class="lang-selector">
-                <span class="lang-current">EN</span>
-                <div class="lang-dropdown">
-                    <button type="button" class="lang-opt active">EN</button>
-                    <button type="button" class="lang-opt">KO</button>
-                    <button type="button" class="lang-opt">JA</button>
-                    <button type="button" class="lang-opt">ZH</button>
-                    <button type="button" class="lang-opt">RU</button>
-                    <button type="button" class="lang-opt">FR</button>
-                    <button type="button" class="lang-opt">FA</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="nav-right">
-            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-                <span class="theme-indicator"></span>
-            </button>
-            <button id="menu-open" class="menu-btn" aria-label="Open Navigation">
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-            </button>
-        </div>
-    </header>
-
-    <div id="menu-overlay" class="menu-overlay">
-        <div class="menu-header">
-            <span class="menu-title">INDEX // 7369</span>
-            <button id="menu-close" class="close-btn" aria-label="Close Navigation">&times;</button>
-        </div>
-        <div class="menu-content">
-            <ul class="nav-list">
-                <li><a href="portal.html">PORTAL</a></li>
-                <li><a href="info.html">INFO</a></li>
-                <li><a href="smiles-and-rules.html">SMILES AND RULES</a></li>
-                <li><a href="news.html">ANNOUNCEMENTS * NEWS</a></li>
-                <li><a href="apply.html">APPLY</a></li>
-            </ul>
-        </div>
-        <div class="menu-footer">
-            <p>VARAY HOLDING ENTERTAINMENT &bull; 7369 INTL</p>
-        </div>
+  <!-- Header Navbar -->
+  <header class="navbar">
+    <a href="index.html" class="brand">VARAY</a>
+    <div class="nav-actions">
+      <button class="theme-toggle-btn" aria-label="Toggle Theme">
+        <div class="dot"></div>
+      </button>
+      <button class="hamburger-btn" id="menuBtn" aria-label="Open Menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
     </div>
+  </header>
 
-    <main class="main-viewport">
-        <section class="hero-screen">
-            <div class="hero-center">
-                <span class="hero-badge">INDEPENDENT ENTERTAINMENT ECOSYSTEM</span>
-                <h1 class="main-title">VARAY</h1>
-                <p class="hero-concept">WRITER . ECHO . MUSICIAN</p>
-                <p class="manifesto-sub">A refined collective establishing timeless acoustic and written narrative experiences for modern global culture.</p>
-                
-                <div class="cta-actions">
-                    <a href="apply.html" class="pill-btn primary">DISCOVER AUDITIONS</a>
-                    <a href="info.html" class="pill-btn secondary">ENTERPRISE INFO</a>
-                </div>
-            </div>
-            
-            <div class="hero-meta">
-                <span>IDENTITY NO. 7369</span>
-                <span class="dot"></span>
-                <span>TOKYO &bull; SEOUL &bull; LOS ANGELES</span>
-            </div>
-        </section>
-    </main>
+  <!-- Fullscreen Navigation Menu -->
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-top-bar">
+      <div class="menu-title">NAVIGATION INDEX</div>
+      <button class="close-btn" id="closeMenuBtn" aria-label="Close Menu">✕</button>
+    </div>
+    
+    <nav class="menu-links">
+      <a href="portal.html">PORTAL</a>
+      <a href="info.html">ENTERPRISE INFO</a>
+      <a href="smiles-and-rules.html">RULES & TERMS</a>
+      <a href="news.html">ANNOUNCEMENTS</a>
+      <a href="apply.html">APPLY AUDITION</a>
+    </nav>
 
-    <script src="script.js"></script>
+    <div class="menu-bottom">
+      <div class="menu-lang-wrapper">
+        <button class="lang-trigger-btn" id="langTrigger">
+          <span id="currentLangLabel">EN</span>
+          <span style="font-size:0.6rem;">▼</span>
+        </button>
+        <div class="menu-lang-list" id="langMenu">
+          <button class="lang-option active" data-lang="en" data-code="EN">English (EN)</button>
+          <button class="lang-option" data-lang="ko" data-code="KO">한국어 (KO)</button>
+          <button class="lang-option" data-lang="ja" data-code="JA">日本語 (JA)</button>
+          <button class="lang-option" data-lang="zh" data-code="ZH">中文 (ZH)</button>
+          <button class="lang-option" data-lang="ru" data-code="RU">Русский (RU)</button>
+          <button class="lang-option" data-lang="fa" data-code="FA">فارسی (FA)</button>
+          <button class="lang-option" data-lang="fr" data-code="FR">Français (FR)</button>
+        </div>
+      </div>
+      <div class="menu-serial">#VRY-7369</div>
+    </div>
+  </div>
+
+  <!-- Main Hero Viewport -->
+  <main class="home-viewport">
+    <div class="hero-badge">OFFICIAL HEADQUARTERS</div>
+    <h1 class="main-title">VARAY</h1>
+    <div class="hero-concept">A NEW ERA OF TALENT & VISION</div>
+    <p class="manifesto-text">
+      Pioneering modern entertainment, creative talent cultivation, and limitless digital ventures globally.
+    </p>
+    <div class="cta-group">
+      <a href="apply.html" class="pill-btn primary">AUDITION PORTAL</a>
+      <a href="portal.html" class="pill-btn secondary">DISCOVER MORE</a>
+    </div>
+    <div class="home-footer-meta">GLOBAL ENTERTAINMENT ECOSYSTEM</div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
