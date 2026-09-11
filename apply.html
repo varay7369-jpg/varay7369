@@ -18,268 +18,73 @@
       <button class="hamburger-btn" id="menuBtn" aria-label="Open Menu">
         <div class="bar"></div>
         <div class="bar"></div>
-        <div class-tag">DISPATCH</span>
-        <h1 class="page-title">ANNOUNCEMENTS</h1>
-        <p class="page-description">Official releases, upcoming project drops, and recruitment cycles.</p>
+        <div class="fa" data-code="FA">فارسی (FA)</button>
+          <button class="lang-option" data-lang="fr" data-code="FR">Français (FR)</button>
+        </div>
+      </div>
+      <div class="menu-serial">#VRY-7369</div>
+    </div>
+  </div>
+
+  <!-- Content Container -->
+  <main class="page-container">
+    <div class="content-wrapper">
+      <div class="page-header">
+        <span class="section-tag">GLOBAL RECRUITMENT</span>
+        <h1 class="page-title">APPLY AUDITION</h1>
+        <p class="page-description">Submit your official application for VARAY global trainee intake.</p>
       </div>
 
       <div class="card-panel">
-        <h2 class="card-title">GLOBAL AUDITIONS 2026 LAUNCH</h2>
-        <p class="card-body">The online portal is officially open for talent intake worldwide across vocal, dance, acting, and creative production categories.</p>
-      </div>
+        <form id="auditionForm">
+          
+          <div class="field-box">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your full legal name" required>
+          </div>
 
-      <div class="card-panel">
-        <h2 class="card-title">NEXT-GEN MEDIA PLATFORM EXPANSION</h2>
-        <p class="card-body">VARAY announces strategic partnerships for interactive digital stages and virtual showcase experiences.</p>
+          <div class="field-box">
+            <label>Category</label>
+            <div class="custom-select-wrapper">
+              <input type="hidden" name="category" value="vocal">
+              <div class="custom-select-trigger">
+                <span class="trigger-value">Vocalist</span>
+                <span style="font-size:0.7rem; color:var(--muted)">▼</span>
+              </div>
+              <div class="custom-dropdown-panel">
+                <div class="dropdown-item active" data-val="vocal">Vocalist</div>
+                <div class="dropdown-item" data-val="dance">Dancer / Choreography</div>
+                <div class="dropdown-item" data-val="rap">Rap / Performance</div>
+                <div class="dropdown-item" data-val="acting">Acting / Modeling</div>
+                <div class="dropdown-item" data-val="producer">Music Producer</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field-box">
+            <label>Email Address</label>
+            <input type="email" placeholder="example@domain.com" required>
+          </div>
+
+          <div class="field-box">
+            <label>Portfolio / Video Link</label>
+            <input type="url" placeholder="https://youtube.com/... or cloud link" required>
+          </div>
+
+          <div class="field-box">
+            <label>Self Introduction & Experience</label>
+            <textarea rows="4" placeholder="Briefly describe your musical background, skills and goals..."></textarea>
+          </div>
+
+          <div style="margin-top: 30px;">
+            <button type="submit" class="pill-btn primary" style="width: 100%;">SUBMIT DOSSIER</button>
+          </div>
+
+        </form>
       </div>
     </div>
   </main>
 
   <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APPLY | VARAY HOLDING</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <header class="navbar">
-        <div class="nav-left">
-            <a href="index.html" class="brand">VARAY</a>
-            <div class="lang-selector">
-                <span class="lang-current">EN</span>
-                <div class="lang-dropdown">
-                    <button type="button" class="lang-opt active">EN</button>
-                    <button type="button" class="lang-opt">KO</button>
-                    <button type="button" class="lang-opt">JA</button>
-                    <button type="button" class="lang-opt">ZH</button>
-                    <button type="button" class="lang-opt">RU</button>
-                    <button type="button" class="lang-opt">FR</button>
-                    <button type="button" class="lang-opt">FA</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="nav-right">
-            <button id="theme-toggle" class="theme-btn"><span class="theme-indicator"></span></button>
-            <button id="menu-open" class="menu-btn">
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-            </button>
-        </div>
-    </header>
-
-    <div id="menu-overlay" class="menu-overlay">
-        <div class="menu-header">
-            <span class="menu-title">INDEX // 7369</span>
-            <button id="menu-close" class="close-btn">&times;</button>
-        </div>
-        <div class="menu-content">
-            <ul class="nav-list">
-                <li><a href="portal.html">PORTAL</a></li>
-                <li><a href="info.html">INFO</a></li>
-                <li><a href="smiles-and-rules.html">SMILES AND RULES</a></li>
-                <li><a href="news.html">ANNOUNCEMENTS * NEWS</a></li>
-                <li><a href="apply.html" class="active">APPLY</a></li>
-            </ul>
-        </div>
-        <div class="menu-footer">
-            <p>VARAY HOLDING ENTERTAINMENT &bull; 7369 INTL</p>
-        </div>
-    </div>
-
-    <main class="page-container content-page">
-        <div class="content-wrapper">
-
-            <!-- Intro Gate (Before the Form) -->
-            <section id="apply-intro" class="apply-intro-card">
-                <span class="section-tag">GLOBAL DISCOVERY DIVISION</span>
-                <h1 class="page-title">We're looking for the next star.</h1>
-                <p class="intro-body">VARAY opens continuous auditions for raw, distinctive voices and creative personalities. We celebrate singular artistic identities with genuine dedication to craft. Review our criteria and prepare your materials prior to entry.</p>
-                <div class="intro-actions">
-                    <button type="button" id="start-apply-btn" class="pill-btn primary">APPLY NOW</button>
-                </div>
-            </section>
-
-            <!-- Continuous Single-Page Application Form -->
-            <form id="audition-form" class="hidden-flow">
-                
-                <div class="form-section-card">
-                    <h2 class="form-title">01. Identity & Demographics</h2>
-
-                    <div class="field-box">
-                        <label>Full Name *</label>
-                        <input type="text" placeholder="Given and Family Name" required>
-                    </div>
-
-                    <div class="field-grid">
-                        <div class="field-box">
-                            <label>Gender *</label>
-                            <select required>
-                                <option value="female" selected>Female</option>
-                            </select>
-                        </div>
-
-                        <div class="field-box">
-                            <label>Nationality *</label>
-                            <input type="text" placeholder="Citizenship" required>
-                        </div>
-                    </div>
-
-                    <!-- Dropdown Date of Birth (No random text input) -->
-                    <div class="field-box">
-                        <label>Date of Birth *</label>
-                        <div class="triple-grid">
-                            <select id="dob-year" required>
-                                <option value="">Year</option>
-                            </select>
-                            <select id="dob-month" required>
-                                <option value="">Month</option>
-                                <option value="01">January</option>
-                                <option value="02">February</option>
-                                <option value="03">March</option>
-                                <option value="04">April</option>
-                                <option value="05">May</option>
-                                <option value="06">June</option>
-                                <option value="07">July</option>
-                                <option value="08">August</option>
-                                <option value="09">September</option>
-                                <option value="10">October</option>
-                                <option value="11">November</option>
-                                <option value="12">December</option>
-                            </select>
-                            <select id="dob-day" required>
-                                <option value="">Day</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="field-grid">
-                        <div class="field-box">
-                            <label>Height</label>
-                            <select id="height-select">
-                                <option value="">Select Height (cm)</option>
-                            </select>
-                        </div>
-                        <div class="field-box">
-                            <label>Weight</label>
-                            <select id="weight-select">
-                                <option value="">Select Weight (kg)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Telephone with country code restrictions -->
-                    <div class="field-box">
-                        <label>Contact Phone *</label>
-                        <div class="phone-composite">
-                            <select class="phone-code" required>
-                                <option value="+82">+82 (KR)</option>
-                                <option value="+81">+81 (JP)</option>
-                                <option value="+1">+1 (US/CA)</option>
-                                <option value="+44">+44 (UK)</option>
-                                <option value="+86">+86 (CN)</option>
-                                <option value="+98">+98 (IR)</option>
-                                <option value="+33">+33 (FR)</option>
-                                <option value="+49">+49 (DE)</option>
-                            </select>
-                            <input type="text" id="phone-input" inputmode="numeric" pattern="[0-9]*" maxlength="11" placeholder="Phone number (digits only)" required>
-                        </div>
-                    </div>
-
-                    <div class="field-box">
-                        <label>Email Address *</label>
-                        <input type="email" placeholder="official@contact.com" required>
-                    </div>
-                </div>
-
-                <div class="form-section-card">
-                    <h2 class="form-title">02. Creative Specialty</h2>
-                    
-                    <div class="field-box">
-                        <label>Select Your Core Discipline (Multiple acceptable)</label>
-                        <div class="chips-container">
-                            <label class="custom-chip"><input type="checkbox" name="role" value="vocal"><span>Vocal</span></label>
-                            <label class="custom-chip"><input type="checkbox" name="role" value="rap"><span>Rap</span></label>
-                            <label class="custom-chip"><input type="checkbox" name="role" value="dance"><span>Dance</span></label>
-                            <label class="custom-chip"><input type="checkbox" name="role" value="writer"><span>Songwriting & Lyric</span></label>
-                            <label class="custom-chip"><input type="checkbox" name="role" value="musician"><span>Instrumentalist</span></label>
-                        </div>
-                    </div>
-
-                    <div class="field-box">
-                        <label>Social / Streaming Link</label>
-                        <input type="url" placeholder="https://instagram.com/... or soundcloud.com/...">
-                    </div>
-                </div>
-
-                <div class="form-section-card">
-                    <h2 class="form-title">03. Media Materials</h2>
-                    
-                    <div class="field-box">
-                        <label>Audio File (.mp3, .wav, .m4a)</label>
-                        <div class="curved-upload-box">
-                            <input type="file" accept="audio/*">
-                            <span class="upload-icon">&#9650;</span>
-                            <p>Choose Audio Master / Demo File</p>
-                        </div>
-                    </div>
-
-                    <div class="field-box">
-                        <label>Visual Identity / Photos (Up to 3 images)</label>
-                        <div class="curved-upload-box">
-                            <input type="file" accept="image/*" multiple>
-                            <span class="upload-icon">&#9650;</span>
-                            <p>Upload Frontal & Full-Profile Portraits</p>
-                        </div>
-                    </div>
-
-                    <div class="field-box">
-                        <label>Video Showcase Link (YouTube, Vimeo Unlisted)</label>
-                        <input type="url" placeholder="https://youtu.be/...">
-                    </div>
-                </div>
-
-                <!-- Terms Accordion & Validation Gate -->
-                <div class="form-section-card">
-                    <h2 class="form-title">04. Agreements & Submission</h2>
-
-                    <div class="accordion-item">
-                        <button type="button" class="accordion-trigger" id="terms-toggle">
-                            <span>TERMS OF APPLICATION & PRIVACY COVENANT</span>
-                            <span class="chevron">+</span>
-                        </button>
-                        <div class="accordion-panel" id="terms-panel">
-                            <p>All materials submitted become strictly confidential evaluation assets under VARAY Entertainment Holding. Candidates consent to artistic review and background checks. No material will be publicly distributed or commercialized without formal written agreement.</p>
-                        </div>
-                    </div>
-
-                    <div class="field-box agreement-box">
-                        <label class="custom-chip term-check">
-                            <input type="checkbox" id="terms-agree" required>
-                            <span>I certify that all statements and media submitted are authentic and accept the terms above.</span>
-                        </label>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="pill-btn primary full-width">SUBMIT OFFICIAL APPLICATION</button>
-                    </div>
-                </div>
-
-            </form>
-
-        </div>
-    </main>
-
-    <script src="script.js"></script>
 </body>
 </html>
