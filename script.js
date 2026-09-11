@@ -1,4 +1,106 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // 1. Theme Controller (Dark / Light)
+  const htmlEl = document.documentElement;
+  const themeToggles = document.querySelectorAll('.theme-toggle-btn');
+  const savedTheme = localStorage.getItem('varay_theme') || 'dark';
+  htmlEl.setAttribute('data-theme', savedTheme);
+
+  themeToggles.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const current = htmlEl.getAttribute('data-theme') || 'dark';
+      const target = current === 'dark' ? 'light' : 'dark';
+      htmlEl.setAttribute('data-theme', target);
+      localStorage.setItem('varay_theme', target);
+    });
+  });
+
+  // 2. Navigation Overlay Controller
+  const menuBtn = document.getElementById('menuBtn');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const closeMenuBtn = document.getElementById('closeMenuBtn');
+
+  if (menuBtn && menuOverlay) {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuOverlay.classList.add('open');
+      document.body.classList.add('no-scroll');
+    });
+  }
+
+  if (closeMenuBtn && menuOverlay) {
+    closeMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuOverlay.classList.remove('open');
+      document.body.classList.remove('no-scroll');
+    });
+  }
+
+  // 3. Language Selector Toggle (Inside Menu)
+  const langTrigger = document.getElementById('langTrigger');
+  const langMenu = document.getElementById('langMenu');
+  const langOptions = document.querySelectorAll('.lang-option');
+
+  if (langTrigger && langMenu) {
+    langTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langMenu.classList.toggle('show');
+    });
+
+    langOptions.forEach(opt => {
+      opt.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langOptions.forEach(o => o.classList.remove('active'));
+        opt.classList.add('active');
+        const chosenLang = opt.getAttribute('data-lang');
+        const chosenCode = opt.getAttribute('data-code');
+        document.getElementById('currentLangLabel').textContent = chosenCode;
+        langMenu.classList.remove('show');
+        localStorage.setItem('varay_lang', chosenLang);
+      });
+    });
+
+    document.addEventListener('click', () => {
+      langMenu.classList.remove('show');
+    });
+  }
+
+  // 4. Custom Select Dropdowns Initialization (No OS native ugly select)
+  document.querySelectorAll('.custom-select-wrapper').forEach(wrapper => {
+    const trigger = wrapper.querySelector('.custom-select-trigger');
+    const panel = wrapper.querySelector('.custom-dropdown-panel');
+    const input = wrapper.querySelector('input[type="hidden"]');
+    const valueText = wrapper.querySelector('.trigger-value');
+
+    if (trigger && panel) {
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // Close others
+        document.querySelectorAll('.custom-dropdown-panel').forEach(p => {
+          if (p !== panel) p.classList.remove('show');
+        });
+        panel.classList.toggle('show');
+      });
+
+      panel.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          panel.querySelectorAll('.dropdown-item').forEach(i => i.classList.remove('active'));
+          item.classList.add('active');
+          const val = item.getAttribute('data-val');
+          if (input) input.value = val;
+          if (valueText) valueText.textContent = item.textContent;
+          panel.classList.remove('show');
+        });
+      });
+    }
+  });
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.custom-dropdown-panel').forEach(p => p.classList.remove('show'));
+  });
+});
+document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Unified Theme Controller (Works on all pages without breaking)
     const themeBtn = document.getElementById('theme-toggle');
