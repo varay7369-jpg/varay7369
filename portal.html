@@ -7,6 +7,201 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="brand">VARAY</a>
+            <div class="lang-selector">
+                <span class="lang-current">EN</span>
+                <div class="lang-dropdown">
+                    <button type="button" class="lang-opt active">EN</button>
+                    <button type="button" class="lang-opt">KO</button>
+                    <button type="button" class="lang-opt">JA</button>
+                    <button type="button" class="lang-opt">ZH</button>
+                    <button type="button" class="lang-opt">RU</button>
+                    <button type="button" class="lang-opt">FR</button>
+                    <button type="button" class="lang-opt">FA</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <button id="theme-toggle" class="theme-btn"><span class="theme-indicator"></span></button>
+            <button id="menu-open" class="menu-btn">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-header">
+            <span class="menu-title">INDEX // 7369</span>
+            <button id="menu-close" class="close-btn">&times;</button>
+        </div>
+        <div class="menu-content">
+            <ul class="nav-list">
+                <li><a href="portal.html" class="active">PORTAL</a></li>
+                <li><a href="info.html">INFO</a></li>
+                <li><a href="smiles-and-rules.html">SMILES AND RULES</a></li>
+                <li><a href="news.html">ANNOUNCEMENTS * NEWS</a></li>
+                <li><a href="apply.html">APPLY</a></li>
+            </ul>
+        </div>
+        <div class="menu-footer">
+            <p>VARAY HOLDING ENTERTAINMENT &bull; 7369 INTL</p>
+        </div>
+    </div>
+
+    <main class="page-container content-page">
+        <div class="content-wrapper">
+
+            <header class="page-header">
+                <span class="section-tag">AUTHENTICATED ACCESS</span>
+                <h1 class="page-title">VARAY PORTAL</h1>
+                <p class="page-desc">Single sign-on entry for registered applicants, signed trainees, and departmental casting executives.</p>
+            </header>
+
+            <div class="portal-tab-bar">
+                <button type="button" class="portal-tab active" onclick="switchPortalTab('candidate')">APPLICANT & TRAINEE</button>
+                <button type="button" class="portal-tab" onclick="switchPortalTab('executive')">EXECUTIVE & FACULTY</button>
+            </div>
+
+            <!-- CANDIDATE LOGIN WITH PHONE NUMBER + PASSWORD -->
+            <div id="candidate-login" class="form-section-card">
+                <h2 class="form-title">Candidate Authentication</h2>
+                <div class="field-box">
+                    <label>Registered Phone Number</label>
+                    <div class="phone-composite">
+                        <select class="phone-code">
+                            <option value="+82">+82</option>
+                            <option value="+81">+81</option>
+                            <option value="+1">+1</option>
+                            <option value="+98">+98</option>
+                        </select>
+                        <input type="text" id="cand-phone" inputmode="numeric" placeholder="Phone digits" required>
+                    </div>
+                </div>
+                <div class="field-box">
+                    <label>Candidate Access Code / Password</label>
+                    <input type="password" id="cand-pass" placeholder="••••••••" required>
+                </div>
+                <button type="button" class="pill-btn primary full-width" onclick="portalCandidateAuth()">ACCESS STATUS</button>
+
+                <!-- CANDIDATE REPORT VIEW -->
+                <div id="candidate-panel" class="portal-result-card hidden-panel">
+                    <div class="status-badge">APPLICATION STATUS: IN REVIEW</div>
+                    <h3>Dossier #VRY-7369-094</h3>
+                    <p class="meta-line">Category: Vocal & Lyricism &bull; Submitted 2026.09.05</p>
+                    <p class="desc-line">Your media files are currently under assessment by the Vocal Arts Committee. Next notification will be pushed via SMS/Portal.</p>
+                </div>
+            </div>
+
+            <!-- EXECUTIVE LOGIN WITH THREE ARTS LISTS -->
+            <div id="executive-login" class="form-section-card hidden-panel">
+                <h2 class="form-title">Staff & Departmental Board</h2>
+                <div class="field-box">
+                    <label>Staff Official ID / Phone</label>
+                    <input type="text" id="exec-id" placeholder="Staff verification identifier">
+                </div>
+                <div class="field-box">
+                    <label>Security Key</label>
+                    <input type="password" id="exec-pass" placeholder="••••••••••••">
+                </div>
+                <button type="button" class="pill-btn primary full-width" onclick="portalExecAuth()">ENTER EVALUATION CONSOLE</button>
+
+                <!-- EXECUTIVE MULTI-DEPARTMENT REVIEW CONSOLE -->
+                <div id="executive-panel" class="portal-result-card hidden-panel">
+                    <div class="dept-nav">
+                        <button type="button" class="dept-btn active" onclick="loadDept('writers')">WRITERS (3)</button>
+                        <button type="button" class="dept-btn" onclick="loadDept('vocals')">VOCALS (4)</button>
+                        <button type="button" class="dept-btn" onclick="loadDept('musicians')">MUSICIANS (2)</button>
+                    </div>
+
+                    <!-- WRITING DEPT LIST -->
+                    <div id="list-writers" class="dept-list-panel">
+                        <div class="applicant-entry">
+                            <div>
+                                <h4>Aria Song (#7369-W01)</h4>
+                                <p>Language: Korean/English &bull; Narrative Lyricism</p>
+                            </div>
+                            <div class="scoring-box">
+                                <button class="action-tag">Read Script</button>
+                                <button class="action-tag pass">Accept</button>
+                            </div>
+                        </div>
+                        <div class="applicant-entry">
+                            <div>
+                                <h4>Elena Rostova (#7369-W02)</h4>
+                                <p>Language: Russian/English &bull; Melodic Concepting</p>
+                            </div>
+                            <div class="scoring-box">
+                                <button class="action-tag">Read Script</button>
+                                <button class="action-tag pass">Accept</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VOCAL DEPT LIST -->
+                    <div id="list-vocals" class="dept-list-panel hidden-panel">
+                        <div class="applicant-entry">
+                            <div>
+                                <h4>Chloe Vance (#7369-V01)</h4>
+                                <p>Range: Mezzo-Soprano &bull; Acoustic Ballad</p>
+                            </div>
+                            <div class="scoring-box">
+                                <button class="action-tag">Play Audio</button>
+                                <button class="action-tag pass">Accept</button>
+                            </div>
+                        </div>
+                        <div class="applicant-entry">
+                            <div>
+                                <h4>Hana Takahashi (#7369-V02)</h4>
+                                <p>Range: Alto/Rap &bull; Modern Urban</p>
+                            </div>
+                            <div class="scoring-box">
+                                <button class="action-tag">Play Audio</button>
+                                <button class="action-tag pass">Accept</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MUSICIAN DEPT LIST -->
+                    <div id="list-musicians" class="dept-list-panel hidden-panel">
+                        <div class="applicant-entry">
+                            <div>
+                                <h4>Maya Lin (#7369-M01)</h4>
+                                <p>Instrument: Grand Piano / Synthesizer &bull; Arranger</p>
+                            </div>
+                            <div class="scoring-box">
+                                <button class="action-tag">Watch Demo</button>
+                                <button class="action-tag pass">Accept</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTAL | VARAY HOLDING</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
